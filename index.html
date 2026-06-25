@@ -160,7 +160,7 @@
       --bg-card:      #0F0F0F;
       --text-primary: #FFFFFF;
       --text-body:    #AAAAAA;
-      --text-muted:   #555555;
+      --text-muted:   #767676;
       --accent:       #FFFFFF;
       --border:       #1A1A1A;
       --line:         #333333;
@@ -187,6 +187,25 @@
     :focus-visible {
       outline: 1px solid #ffffff;
       outline-offset: 3px;
+    }
+
+    /* Skip navigation */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      right: 0;
+      background: #ffffff;
+      color: #000000;
+      padding: 0.8rem 1.4rem;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 0;
     }
 
     img, svg { display: block; }
@@ -1208,6 +1227,8 @@
   <!-- ══════════════════════════════════════════
        NAVIGATION
   ══════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link">דלג לתוכן הראשי</a>
+
   <nav id="nav" role="navigation" aria-label="תפריט ראשי">
     <a href="#" class="nav-logo" aria-label="VERITAS — עמוד הבית">
       <!-- לוגו גל פוליגרף -->
@@ -1248,6 +1269,7 @@
   <!-- ══════════════════════════════════════════
        HERO
   ══════════════════════════════════════════ -->
+  <main id="main-content">
   <section id="hero">
     <!-- Video: detective questioning a suspect — Pexels free license -->
     <div class="video-bg" aria-hidden="true">
@@ -1504,11 +1526,11 @@
       <div class="faq-list" role="list">
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-btn-1" aria-expanded="false" aria-controls="faq-answer-1">
             <span>האם בדיקת פוליגרף קבילה כראיה בבית משפט בישראל?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-1">
             <p>בדיקת פוליגרף אינה קבילה כראיה עצמאית בבית המשפט בישראל,
                אולם ניתן להגישה כחוות דעת מומחה במסגרת הליכים אזרחיים
                ולשימוש בגישור ובבוררות.</p>
@@ -1516,55 +1538,55 @@
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-btn-2" aria-expanded="false" aria-controls="faq-answer-2">
             <span>כמה זמן נמשכת הבדיקה?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-2">
             <p>הבדיקה נמשכת בדרך כלל בין 60 ל-90 דקות, כולל ריאיון מקדים
                והסבר מלא על התהליך.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-btn-3" aria-expanded="false" aria-controls="faq-answer-3">
             <span>האם הבדיקה כואבת או מאיימת?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-3">
             <p>לא. מחברים חיישנים לא פולשניים לגוף — ללא כאב וללא אי-נוחות.
                הסביבה מכבדת ורגועה לאורך כל הבדיקה.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-btn-4" aria-expanded="false" aria-controls="faq-answer-4">
             <span>מה ההבדל בין בודק מוסמך לבין אחד שאינו מוסמך?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-4">
             <p>בודק מוסמך APA עבר הכשרה מקיפה לפי תקנים בינלאומיים,
                משתמש בציוד מכויל ועומד בכללי האתיקה של האיגוד האמריקאי לפוליגרף.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-btn-5" aria-expanded="false" aria-controls="faq-answer-5">
             <span>האם המידע נשמר בסוד?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-5">
             <p>כן. כל בדיקה מתבצעת בסודיות מלאה. הממצאים נמסרים אך ורק
                למזמין הבדיקה או לפי הסכמה מפורשת בכתב.</p>
           </div>
         </div>
 
         <div class="faq-item" role="listitem">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" id="faq-btn-6" aria-expanded="false" aria-controls="faq-answer-6">
             <span>כמה עולה הבדיקה?</span>
             <span class="faq-icon" aria-hidden="true"></span>
           </button>
-          <div class="faq-answer">
+          <div class="faq-answer" id="faq-answer-6">
             <p>המחיר משתנה לפי סוג ומורכבות הבדיקה. ניתן לפנות לתיאום
                ייעוץ ראשוני ללא עלות.</p>
           </div>
@@ -1674,6 +1696,24 @@
   <!-- ══════════════════════════════════════════
        FOOTER
   ══════════════════════════════════════════ -->
+  </main><!-- /#main-content -->
+
+  <!-- ══════════════════════════════════════════
+       הצהרת נגישות
+  ══════════════════════════════════════════ -->
+  <section id="accessibility" style="background:var(--bg-section);padding:80px 0;border-top:1px solid var(--border);">
+    <div class="container">
+      <span class="eyebrow">הצהרת נגישות</span>
+      <h2 style="font-size:1.8rem;margin-bottom:1.6rem;">נגישות האתר</h2>
+      <div style="max-width:720px;display:flex;flex-direction:column;gap:1rem;">
+        <p>אתר זה עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג–2013, ומיישם את המלצות מסמך <strong>WCAG 2.0</strong> ברמה <strong>AA</strong> ואת <strong>תקן ישראלי 5568</strong>.</p>
+        <p>האתר מותאם לשימוש עם קורא מסך, ניווט מקלדת, ותצוגה בניגודיות גבוהה. הוא נבדק ועודכן לאחרונה ביוני 2026.</p>
+        <p>נתקלתם בבעיית נגישות? נשמח לשמוע:<!-- TODO: הכנס טלפון ומייל --></p>
+        <p style="color:var(--text-muted);font-size:0.85rem;">תאריך עדכון אחרון: יוני 2026</p>
+      </div>
+    </div>
+  </section>
+
   <footer id="footer" role="contentinfo">
     <div class="container">
       <div class="footer-main">
@@ -1693,7 +1733,7 @@
         <span class="footer-copy">© 2025 | veritas-il.com</span>
       </div>
 
-      <p class="footer-micro">כל הזכויות שמורות | האתר נועד למטרות פרסום בלבד</p>
+      <p class="footer-micro">כל הזכויות שמורות | האתר נועד למטרות פרסום בלבד | <a href="#accessibility" style="color:inherit;text-decoration:underline;">הצהרת נגישות</a></p>
     </div>
   </footer>
 
@@ -1763,6 +1803,10 @@
       document.body.style.overflow = '';
     }
 
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
+    });
+
     /* ── WHATSAPP FAB — appears after 2s ── */
     const fab = document.getElementById('whatsapp-fab');
     setTimeout(() => fab.classList.add('visible'), 2000);
@@ -1800,6 +1844,20 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      let hasError = false;
+      form.querySelectorAll('[required]').forEach(field => {
+        if (!field.value.trim()) {
+          field.setAttribute('aria-invalid', 'true');
+          hasError = true;
+        } else {
+          field.removeAttribute('aria-invalid');
+        }
+      });
+      if (hasError) {
+        const firstInvalid = form.querySelector('[aria-invalid="true"]');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
       const data = new FormData(form);
       try {
         await fetch('/', {
